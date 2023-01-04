@@ -56,11 +56,16 @@ public class Student extends Personne {
 
         coursPreferer = _coursPreferer;
     }
-    
-   /* public float PoidMoyenParAn() {
-   
-        return poid / (float) age;
-    }
-    */
 
+    @java.lang.Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof Student student)) return false;
+        if (!super.equals(object)) return false;
+        return nbrStudent == student.nbrStudent && java.lang.Float.compare(student.moyenneStudent, moyenneStudent) == 0 && java.util.Objects.equals(coursPreferer, student.coursPreferer);
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), nbrStudent, moyenneStudent, coursPreferer);
+    }
 }

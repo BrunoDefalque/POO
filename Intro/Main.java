@@ -17,11 +17,17 @@ public class Main {
 
 		IPhone iPhone14Pro = new IPhone("iPhone", "mauve", 128, 14, "Pro");
 
+
+
+
 		IPhone iPhone14 = new IPhone("iPhone", "rouge", 64, 14, null);
 
+		IPhone iPhone142 = new IPhone("iPhone", "rouge", 64, 14, null);
 		Student sebastien = new Student("Sébastien", 39, 1.75f, 80f, null, 1, 18.22f, "Mysql", iPhone14);
 
     Student bruno = new Student("Bruno", 43, 1.8f, 90f, tokyo, 2, 19f, "java", iPhone14Pro);
+
+		Student bruno1 = new Student("Bruno", 43, 1.8f, 90f, tokyo, 2, 19f, "java", iPhone14Pro);
 
     Student simon = new Student("Simon", 23, 1.65f, 56f, tokyo, 3, 8.2f, "anglais", iPhone14);
 
@@ -127,7 +133,13 @@ System.out.println(bruno);
 
 System.out.println(iPhone14.equals(iPhone14Pro));
 
+		System.out.println(iPhone142.GetProductName().equals(iPhone14.GetProductName()));
+
+		System.out.println(iPhone14.equals(iPhone14));
 
 
+		System.out.println(bruno.GetAge() == bruno1.GetAge());
+
+		System.out.println();
 	}
 }

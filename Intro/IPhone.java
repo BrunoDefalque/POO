@@ -5,9 +5,9 @@ public class IPhone extends Product {
 
     // propriétés
 
-protected int nbrIPhone;
+private int nbrIPhone;
 
-protected String force;
+private String force;
 
 // Constructeur
 
@@ -45,12 +45,31 @@ public void SetForce(String _force) {
 }
 
 // création des fonctions magique
-//toString
 
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof IPhone iPhone)) return false;
+        if (!super.equals(object)) return false;
+        return nbrIPhone == iPhone.nbrIPhone && java.util.Objects.equals(force, iPhone.force);
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), nbrIPhone, force);
+    }
+
+
+
+    /*
 @Override
 
 public String toString() {
 
     return "Son smartPhone est un " + productName + " " + nbrIPhone + " " + force + "\nIl est de couleur " + color + " et il a une capacité de " + memory + "GB";
+
+
 }
+
+ */
+
+
 }
